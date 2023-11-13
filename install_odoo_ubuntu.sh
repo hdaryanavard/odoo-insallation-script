@@ -122,11 +122,11 @@ echo -e "\n---- Install wkhtmltopdf and place shortcuts on correct place for ODO
 ###  WKHTMLTOPDF download links
 ## === Ubuntu Jammy x64 === (for other distributions please replace this link,
 ## in order to have correct version of wkhtmltopdf installed, for a danger note refer to
-## https://github.com/odoo/odoo/wiki/Wkhtmltopdf ):
-## https://www.odoo.com/documentation/17.0/setup/install.html#debian-ubuntu
+## https://github.com/odoo/wkhtmltopdf ):
+## https://www.odoo.com/documentation/17.0/administration/install/packages.html
 
-  sudo wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb 
-  sudo dpkg -i wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+  sudo wget https://github.com/odoo/wkhtmltopdf/releases/download/nightly/wkhtmltox_0.13.0-1.nightly.jammy_amd64.deb 
+  sudo dpkg -i wkhtmltox_0.13.0-1.nightly.jammy_amd64.deb
   sudo ln -s /usr/local/bin/wkhtmltopdf /usr/bin
   sudo ln -s /usr/local/bin/wkhtmltoimage /usr/bin
    else
