@@ -10,15 +10,15 @@ If you set the parameter ```INSTALL_NGINX``` to ```True``` you should also confi
 
 ##### 1. Download the script:
 ```
-wget https://raw.githubusercontent.com/hrmuwanika/odoo/16.0/install_odoo_ubuntu.sh
+wget https://raw.githubusercontent.com/hdaryanavard/odoo/17.0/install_odoo_ubuntu.sh
 ```
 ##### 2. Modify the parameters as you wish.
 There are a few things you can configure, this is the most used list:<br/>
 ```OE_USER``` will be the username for the system user.<br/>
 ```GENERATE_RANDOM_PASSWORD``` if this is set to ```True``` the script will generate a random password, if set to ```False```we'll set the password that is configured in ```OE_SUPERADMIN```. By default the value is ```True``` and the script will generate a random and secure password.<br/>
 ```OE_PORT``` is the port where Odoo should run on, for example 8069.<br/>
-```OE_VERSION``` is the Odoo version to install, for example ```14.0``` for Odoo V14.<br/>
-```IS_ENTERPRISE``` will install the Enterprise version on top of ```16.0``` if you set it to ```True```, set it to ```False``` if you want the community version of Odoo 16.<br/>
+```OE_VERSION``` is the Odoo version to install, for example ```16.0``` for Odoo V16.<br/>
+```IS_ENTERPRISE``` will install the Enterprise version on top of ```17.0``` if you set it to ```True```, set it to ```False``` if you want the community version of Odoo 17.<br/>
 ```OE_SUPERADMIN``` is the master password for this Odoo installation.<br/>
 ```INSTALL_NGINX``` is set to ```True``` by default. Set this to ```False``` if you don't want to install Nginx.<br/>
 ```WEBSITE_NAME``` Set the website name here for nginx configuration<br/>
@@ -39,4 +39,4 @@ sudo ./install_odoo_ubuntu.sh
 The installation should take about 10 minutes to complete and then you will be able to access it from
 anywhere in the world by entering its ipaddress.
 
-For more information on hosting, upgrading to odoo enterprise, and changing your domain, contact me hrmuwanika@gmail.com
+For more information on hosting, upgrading to odoo enterprise, and changing your domain, contact me hdaryanavard@gmail.com
