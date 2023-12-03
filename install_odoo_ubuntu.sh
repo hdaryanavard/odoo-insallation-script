@@ -2,7 +2,7 @@
 
 ################################################################################
 # Script for installing Odoo on Ubuntu 22.04 LTS (could be used for other version too)
-# Author: Henry Robert Muwanika
+# Author: Hassan Daryanavard
 #-------------------------------------------------------------------------------
 # This script will install Odoo on your Ubuntu 22.04 server. It can install multiple Odoo instances
 # in one Ubuntu because of the different xmlrpc_ports
@@ -25,8 +25,8 @@ OE_HOME_EXT="/opt/$OE_USER/${OE_USER}-server"
 INSTALL_WKHTMLTOPDF="True"
 # Set the default Odoo port (you still have to use -c /etc/odoo-server.conf for example to use this.)
 OE_PORT="8069"
-# Choose the Odoo version which you want to install. For example: 16.0, 15.0 or 14.0. When using 'master' the master version will be installed.
-# IMPORTANT! This script contains extra libraries that are specifically needed for Odoo 14.0
+# Choose the Odoo version which you want to install. For example: 17.0, 16.0 or 15.0. When using 'master' the master version will be installed.
+# IMPORTANT! This script contains extra libraries that are specifically needed for Odoo 15.0
 OE_VERSION="17.0"
 # Set this to True if you want to install the Odoo enterprise version!
 IS_ENTERPRISE="False"
@@ -201,19 +201,6 @@ if [ $IS_ENTERPRISE = "True" ]; then
     sudo su root -c "printf 'addons_path=${OE_HOME}/enterprise/addons,${OE_HOME_EXT}/addons\n' >> /etc/${OE_CONFIG}.conf"
 else
     sudo su root -c "printf 'addons_path=${OE_HOME_EXT}/addons,${OE_HOME}/custom/addons\n' >> /etc/${OE_CONFIG}.conf"
-fi
-
-# echo -e "\n======== Adding Enterprise or custom modules ============="
-if [ $IS_ENTERPRISE = "True" ]; then
-  #### upgrade odoo community to enterprise edition ####
-  # Odoo 15: https://www.soladrive.com/downloads/enterprise-15.0.tar.gz
-  
-  echo -e "\n======== Adding some enterprise modules ============="
-  wget https://www.soladrive.com/downloads/enterprise-15.0.tar.gz
-  tar -zxvf enterprise-15.0.tar.gz
-  cp -rf odoo-15.0*/odoo/addons/* ${OE_HOME}/enterprise/addons
-  rm enterprise-15.0.tar.gz
-  chown -R $OE_USER:$OE_USER ${OE_HOME}/
 fi
 
 sudo chown $OE_USER:$OE_USER /etc/${OE_CONFIG}.conf
