@@ -260,8 +260,14 @@ cat <<EOF > /etc/nginx/sites-available/$WEBSITE_NAME.conf
 }
 
 server {
-   listen 80;
-   server_name $WEBSITE_NAME;
+   listen 80;
+   server_name $WEBSITE_NAME;
+   return 301 https://$WEBSITE_NAME$request_uri;
+}
+
+server {
+   listen 443 ssl;
+   server_name $WEBSITE_NAME;
 
    # Specifies the maximum accepted body size of a client request,
    # as indicated by the request header Content-Length.
@@ -288,7 +294,13 @@ server {
    proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
    proxy_set_header X-Forwarded-Proto \$scheme;
    proxy_set_header X-Real-IP \$remote_addr;
-
+   
+   # SSL parameters
+      ssl_certificate /etc/letsencrypt/live/$WEBSITE_NAME/fullchain.pem;
+      ssl_certificate_key /etc/letsencrypt/live/$WEBSITE_NAME/privkey.pem;
+      ssl_trusted_certificate /etc/letsencrypt/live/$WEBSITE_NAME/chain.pem;
+   ssl_session_timeout 30m;
+   
    # Redirect requests to odoo backend server
    location / {
      proxy_redirect off;
@@ -323,7 +335,7 @@ server {
 EOF
 
   sudo mv ~/odoo /etc/nginx/sites-available/
-  sudo ln -s /etc/nginx/sites-available/$OE_USER /etc/nginx/sites-enabled/$OE_USER
+  sudo ln -s /etc/nginx/sites-available/$WEBSITE_NAME.conf /etc/nginx/sites-enabled/$WEBSITE_NAME.conf
   sudo rm /etc/nginx/sites-enabled/default
   sudo rm /etc/nginx/sites-available/default
   
