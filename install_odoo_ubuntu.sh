@@ -248,7 +248,7 @@ if [ $INSTALL_NGINX = "True" ]; then
   sudo apt install -y nginx
   sudo systemctl enable nginx
   
-cat <<EOF > /etc/nginx/sites-available/$OE_USER
+cat <<EOF > /etc/nginx/sites-available/$WEBSITE_NAME.conf
 
 # odoo server
  upstream $OE_USER {
@@ -272,7 +272,7 @@ server {
    error_log /var/log/nginx/$OE_USER-error.log;
 
    # add ssl specific settings
-   keepalive_timeout 90;
+   keepalive_timeout 300;
 
    # increase proxy buffer to handle some Odoo web requests
    proxy_buffers 16 64k;
@@ -318,7 +318,6 @@ server {
   client_body_buffer_size 32K;
   sendfile on;
   send_timeout 600s;
-  keepalive_timeout 300;
 }
  
 EOF
