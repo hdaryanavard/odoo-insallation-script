@@ -260,14 +260,14 @@ cat <<EOF > /etc/nginx/sites-available/$WEBSITE_NAME.conf
 }
 
 server {
-   listen 80;
-   server_name $WEBSITE_NAME;
-   return 301 https://$WEBSITE_NAME$request_uri;
+  listen 80;
+  server_name $WEBSITE_NAME;
+  return 301 https://$WEBSITE_NAME$request_uri;
 }
 
 server {
-   listen 443 ssl;
-   server_name $WEBSITE_NAME;
+  listen 443 ssl;
+  server_name $WEBSITE_NAME;
 
    # Specifies the maximum accepted body size of a client request,
    # as indicated by the request header Content-Length.
