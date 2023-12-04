@@ -296,9 +296,9 @@ server {
    proxy_set_header X-Real-IP \$remote_addr;
    
    # SSL parameters
-      ssl_certificate /etc/letsencrypt/live/$WEBSITE_NAME/fullchain.pem;
-      ssl_certificate_key /etc/letsencrypt/live/$WEBSITE_NAME/privkey.pem;
-      ssl_trusted_certificate /etc/letsencrypt/live/$WEBSITE_NAME/chain.pem;
+   ssl_certificate /etc/letsencrypt/live/$WEBSITE_NAME/fullchain.pem;
+   ssl_certificate_key /etc/letsencrypt/live/$WEBSITE_NAME/privkey.pem;
+   ssl_trusted_certificate /etc/letsencrypt/live/$WEBSITE_NAME/chain.pem;
    ssl_session_timeout 30m;
    
    # Redirect requests to odoo backend server
