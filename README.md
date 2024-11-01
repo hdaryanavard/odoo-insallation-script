@@ -4,13 +4,13 @@ This script will also give you the ability to define an xmlrpc_port in the .conf
 This script can be safely used in a multi-odoo code base server because the default Odoo port is changed BEFORE the Odoo is started.
 
 ## Installing Nginx
-If you set the parameter ```INSTALL_NGINX``` to ```True``` you should also configure workers. Without workers you will probably get connection loss issues. Look at [the deployment guide from Odoo](https://www.odoo.com/documentation/14.0/setup/deploy.html) on how to configure workers.
+If you set the parameter ```INSTALL_NGINX``` to ```True``` you should also configure workers. Without workers you will probably get connection loss issues. Look at [the deployment guide from Odoo](https://www.odoo.com/documentation/18.0/setup/deploy.html) on how to configure workers.
 
 ## Installation procedure
 
 ##### 1. Download the script:
 ```
-wget https://raw.githubusercontent.com/hdaryanavard/odoo-insallation-script/17.0/install_odoo_ubuntu.sh
+wget https://raw.githubusercontent.com/hdaryanavard/odoo-insallation-script/18.0/install_odoo_ubuntu.sh
 ```
 ##### 2. Modify the parameters as you wish.
 There are a few things you can configure, this is the most used list:<br/>
