@@ -124,8 +124,8 @@ echo -e "\n---- Install wkhtmltopdf and place shortcuts on correct place for ODO
 ## https://github.com/odoo/wkhtmltopdf ):
 ## https://www.odoo.com/documentation/17.0/administration/install/packages.html
 
-  sudo wget https://github.com/odoo/wkhtmltopdf/releases/download/nightly/wkhtmltox_0.13.0-1.nightly.jammy_amd64.deb 
-  sudo dpkg -i wkhtmltox_0.13.0-1.nightly.jammy_amd64.deb
+  sudo wget https://github.com/odoo/wkhtmltopdf/releases/download/nightly/odoo-wkhtmltopdf-ubuntu-jammy-x86_64-0.13.0-nightly.deb 
+  sudo dpkg -i odoo-wkhtmltopdf-ubuntu-jammy-x86_64-0.13.0-nightly.deb
   sudo ln -s /usr/local/bin/wkhtmltopdf /usr/bin
   sudo ln -s /usr/local/bin/wkhtmltoimage /usr/bin
    else
