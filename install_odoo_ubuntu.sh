@@ -1,10 +1,10 @@
 #!/bin/bash
 
 ################################################################################
-# Script for installing Odoo on Ubuntu 22.04 LTS (could be used for other version too)
+# Script for installing Odoo on Ubuntu 24.04 LTS (could be used for other version too)
 # Author: Hassan Daryanavard
 #-------------------------------------------------------------------------------
-# This script will install Odoo on your Ubuntu 22.04 server. It can install multiple Odoo instances
+# This script will install Odoo on your Ubuntu 24.04 server. It can install multiple Odoo instances
 # in one Ubuntu because of the different xmlrpc_ports
 #-------------------------------------------------------------------------------
 # crontab -e
@@ -25,9 +25,9 @@ OE_HOME_EXT="/opt/$OE_USER/${OE_USER}-server"
 INSTALL_WKHTMLTOPDF="True"
 # Set the default Odoo port (you still have to use -c /etc/odoo-server.conf for example to use this.)
 OE_PORT="8069"
-# Choose the Odoo version which you want to install. For example: 17.0, 16.0 or 15.0. When using 'master' the master version will be installed.
+# Choose the Odoo version which you want to install. For example: 18.0, 17.0, 16.0 or 15.0. When using 'master' the master version will be installed.
 # IMPORTANT! This script contains extra libraries that are specifically needed for Odoo 15.0
-OE_VERSION="17.0"
+OE_VERSION="18.0"
 # Set this to True if you want to install the Odoo enterprise version!
 IS_ENTERPRISE="False"
 # Set this to True if you want to install Nginx!
