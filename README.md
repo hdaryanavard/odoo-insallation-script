@@ -1,6 +1,7 @@
 # Installation Script for Odoo Open Source
 
 Bash script to install **Odoo 19.0** on **Ubuntu 26.04 LTS (Resolute Raccoon)**.
+See the [changelog](CHANGELOG.md) for what changed in this release.
 
 It generates an Odoo config under `/etc/` with a configurable `http_port`, so it
 can be safely used on a multi-Odoo server: run it again with a different
